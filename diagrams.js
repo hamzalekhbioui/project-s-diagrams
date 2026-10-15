@@ -20,9 +20,13 @@ window.DIAGRAMS = {
   },
   state: {
     title: 'State machine diagram', category: '02 / BEHAVIOR',
-    intro: 'Follow the lifecycle of a mobile agent through its changing states.',
+    intro: 'Explore the lifecycles of mobile agents, the simulation, and population masters.',
     next: 'activity', nextLabel: 'Activity diagram',
-    sheets: [{ title: 'Agent lifecycle', file: 'machineStateMachineDiagrams/agent-lifecycle.svg', sample: true, description: 'Illustrative draft, not a verified behavioral specification. This example uses the AgentState names in your UML: EXPLORING, RETURNING_HOME, RECHARGING, and EXHAUSTED. The transition conditions are proposed examples; replace this SVG with your final state machine before submission.', points: ['Rounded boxes represent agent states.', 'Arrow labels show illustrative transition conditions.', 'Replace the draft with your verified lifecycle.'] }]
+    sheets: [
+      { title: 'Mobile agent lifecycle', file: 'machineStateMachineDiagrams/01.Mobile_agent_lifecycle.drawio.svg', description: 'State machine diagram showing the mobile agent lifecycle.', sample: false },
+      { title: 'Simulation lifecycle', file: 'machineStateMachineDiagrams/02.Simulation_lifecycle.drawio.svg', description: 'State machine diagram showing the simulation lifecycle.', sample: false },
+      { title: 'Master lifecycle', file: 'machineStateMachineDiagrams/03.Master_lifecycle.drawio.svg', description: 'State machine diagram showing the master lifecycle.', sample: false }
+    ]
   },
   activity: {
     title: 'Activity diagram', category: '03 / FLOW',
