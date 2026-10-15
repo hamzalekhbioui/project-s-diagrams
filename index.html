@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the class structure, agent lifecycle, and execution flow of a multi-agent simulation.">
+  <meta name="theme-color" content="#1f483e">
+  <title>Simulation Atlas · Project architecture</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/panzoom.min.js"></script>
+  <script defer src="diagrams.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside class="sidebar">
+    <a class="brand" href="#class"><span class="brand-mark" aria-hidden="true">⌘</span><span>Simulation <small>PROJECT DOCUMENTATION</small></span></a>
+    <div class="sidebar-label">WORKSPACE <span>01</span></div>
+    <nav aria-label="Project sections">
+      <div class="nav-caption">ARCHITECTURE</div>
+      <a class="nav-link" href="#class" data-view="class"><span aria-hidden="true">◇</span>UML class diagram<small>01</small></a>
+      <a class="nav-link" href="#state" data-view="state"><span aria-hidden="true">◎</span>State machine<small>02</small></a>
+      <a class="nav-link" href="#activity" data-view="activity"><span aria-hidden="true">⇄</span>Activity diagram<small>03</small></a>
+    </nav>
+  </aside>
+  <div class="page-shell">
+    <header class="topbar"><div>Mini-project <span class="mx-3 text-stone-300">/</span> <span id="breadcrumb">UML class diagram</span></div><span class="document-badge"><span class="status-dot"></span> Architecture notebook</span></header>
+    <main id="main" tabindex="-1">
+      <section id="diagram-view" aria-labelledby="diagram-title">
+        <div class="diagram-heading"><div><div class="eyebrow" id="diagram-category"></div><h1 id="diagram-title"></h1><p class="muted mt-3" id="diagram-intro"></p></div><span class="format-badge">SVG · VECTOR</span></div>
+        <div class="diagram-select-row"><label for="diagram-select">Diagram sheet</label><select id="diagram-select"></select><span id="sample-badge" class="sample-label" hidden>Illustrative example · replace before submission</span></div>
+        <section class="viewer" id="viewer" aria-label="Interactive diagram viewer">
+          <div class="viewer-toolbar"><div class="viewer-name"><span class="status-dot"></span><span id="sheet-title"></span></div><div class="viewer-actions"><a id="download" class="tool-button" download title="Download SVG" aria-label="Download SVG">↓</a><button id="fullscreen" class="tool-button" title="Full screen (F)" aria-label="Enter full screen">⛶</button></div></div>
+          <div class="canvas" id="canvas" tabindex="0" role="region" aria-label="Diagram canvas. Drag to pan, scroll or pinch to zoom. Use plus, minus, zero and arrow keys." aria-describedby="canvas-help"><img id="diagram-image" alt="" draggable="false"><div id="load-status" class="load-status" role="status">Loading diagram…</div></div>
+          <div class="canvas-bottom"><span id="canvas-help">Drag to pan <span>·</span> Scroll or pinch to zoom</span><div class="zoom-controls"><button id="zoom-out" class="tool-button" aria-label="Zoom out" title="Zoom out (−)">−</button><output id="zoom-level" aria-label="Zoom level">100%</output><button id="zoom-in" class="tool-button" aria-label="Zoom in" title="Zoom in (+)">+</button><span class="control-divider"></span><button id="reset" class="fit-button" title="Reset view (0)">↺ <span>Fit</span></button></div></div>
+        </section>
+        <div class="diagram-bottom-nav"><a id="next-diagram" href="#state">Next: State machine →</a></div>
+      </section>
+      <footer class="page-footer"><span>Simulation Atlas <span class="text-stone-300 mx-2">/</span> Project architecture</span><span>Built for understanding.</span></footer>
+    </main>
+  </div>
+  <noscript><div class="noscript">Enable JavaScript to use the interactive viewer. <a href="umlDiagrams/1.Model_Overview.drawio.svg">Open the UML overview directly</a>.</div></noscript>
+</body>
+</html>

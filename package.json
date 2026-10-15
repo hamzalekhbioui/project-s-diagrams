@@ -1,0 +1,17 @@
+{
+  "name": "project-diagrams",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i styles.css -o assets/styles.css --minify && node scripts/build.mjs",
+    "dev": "python3 -m http.server 5173 --bind 127.0.0.1",
+    "check": "node --check app.js && node --check diagrams.js && node --check scripts/build.mjs"
+  },
+  "dependencies": {
+    "@panzoom/panzoom": "^4.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.0",
+    "tailwindcss": "4.3.0"
+  }
+}

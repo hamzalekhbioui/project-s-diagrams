@@ -1,0 +1,33 @@
+// Edit this file to change titles, descriptions, and SVG paths.
+// Paths are relative to index.html; spaces and special characters are supported.
+window.DIAGRAMS = {
+  class: {
+    title: 'UML class diagram', category: '01 / STRUCTURE',
+    intro: 'Explore the objects, contracts, and relationships that define the simulation.',
+    next: 'state', nextLabel: 'State machine',
+    sheets: [
+      { title: 'Model overview', file: 'umlDiagrams/1.Model_Overview.drawio.svg', description: 'The model connects Simulation to mobile agents, world movement, and scorekeeping. Movable and Master define separate contracts, while Individual owns shared identity and knowledge. Start here before exploring the detailed sheets.', points: ['Interfaces distinguish mobile agents from masters.', 'Individual centralizes identity and knowledge.', 'Services coordinate movement and message delivery.'] },
+      { title: 'Agent contracts & owned state', file: 'umlDiagrams/2.Agent_Contracts_&_owned_state.drawio.svg', description: 'Movable and Master specify the agent contracts. Individual holds identity and Knowledge, while MobileState encapsulates energy, movement history, and lifecycle state.', points: ['Compare the Movable and Master interfaces.', 'Inspect the state-changing methods on MobileState.', 'Follow ownership from Individual to Knowledge.'] },
+      { title: 'Good alliance: elves & humans', file: 'umlDiagrams/3.Good alliance: Elves_&_Humans.drawio.svg', description: 'The good-alliance hierarchy specializes Individual through GoodBeing and population-specific abstractions. Concrete mobile agents and singleton masters implement the appropriate contracts.', points: ['Follow inheritance through the population hierarchy.', 'Compare the mobile and master roles.', 'Look for shared behavior in abstract classes.'] },
+      { title: 'Bad alliance: orcs & goblins', file: 'umlDiagrams/4.Bad alliance: Orcs_&_Goblins.drawio.svg', description: 'The bad-alliance hierarchy groups orcs and goblins under BadBeing. Population-specific classes separate mobile behavior from the singleton master role.', points: ['Compare this hierarchy with the good alliance.', 'Identify the concrete mobile agents.', 'Inspect the master implementations.'] },
+      { title: 'Simulation ownership & scheduling', file: 'umlDiagrams/5.Simulation_Ownership_&_scheduling.drawio.svg', description: 'Simulation coordinates the world, agents, services, event log, and renderer. Its step execution and turn context methods describe how the simulation is scheduled and how its dependencies are organized.', points: ['Follow the dependencies owned by Simulation.', 'Inspect the step and turn context methods.', 'Find where completion becomes a SimulationResult.'] },
+      { title: 'Turn execution & master delivery', file: 'umlDiagrams/6.Turn_execution_&_Master_delivery.drawio.svg', description: 'TurnContext supplies the references needed for a turn. MovementService plans and executes movement, EncounterResolver handles interactions, and delivery methods connect mobile agents to their own masters.', points: ['Trace the use of TurnContext across services.', 'Inspect blocked movement and energy handling.', 'Follow message delivery and completion checks.'] },
+      { title: 'World, occupancy & safe zones', file: 'umlDiagrams/7.World, occupancy_&_SafeZones.drawio.svg', description: 'WorldMap manages tiles, positions, obstacles, and population safe zones. Position and direction values support navigation, while occupancy and access methods keep movement consistent.', points: ['Distinguish positions, tiles, and occupants.', 'Inspect access rules for population safe zones.', 'Follow placement and movement operations.'] },
+      { title: 'Configuration & initialization', file: 'umlDiagrams/8.Configuration_&_initialization.drawio.svg', description: 'Main starts the program and SimulationInitializer creates and connects the simulation components. SimulationConfig gathers the configuration values used to build the world, agents, obstacles, and messages.', points: ['Start at Main and follow initialization.', 'Identify configuration values and their consumers.', 'Inspect how objects are created and placed.'] },
+      { title: 'Events, rendering & final results', file: 'umlDiagrams/9.Events, rendering_&_final_results.drawio.svg', description: 'EventLog records typed simulation events, and Renderer separates presentation from execution. Simulation results and end reasons describe completion, while RandomGenerator provides the random operations used by the model.', points: ['Compare event recording with rendering.', 'Inspect the Renderer interface.', 'Find the data captured at simulation completion.'] },
+      { title: 'Population identity & runtime enums', file: 'umlDiagrams/10.Population_Identity_&_runtime_enums.drawio.svg', description: 'The shared types define populations, alliances, agent states, directions, event types, and outcomes. MovementPlan pairs a direction with a distance for movement execution.', points: ['Review the four AgentState values.', 'Inspect population-to-alliance mappings.', 'Compare runtime events with end reasons.'] }
+    ]
+  },
+  state: {
+    title: 'State machine diagram', category: '02 / BEHAVIOR',
+    intro: 'Follow the lifecycle of a mobile agent through its changing states.',
+    next: 'activity', nextLabel: 'Activity diagram',
+    sheets: [{ title: 'Agent lifecycle', file: 'machineStateMachineDiagrams/agent-lifecycle.svg', sample: true, description: 'Illustrative draft, not a verified behavioral specification. This example uses the AgentState names in your UML: EXPLORING, RETURNING_HOME, RECHARGING, and EXHAUSTED. The transition conditions are proposed examples; replace this SVG with your final state machine before submission.', points: ['Rounded boxes represent agent states.', 'Arrow labels show illustrative transition conditions.', 'Replace the draft with your verified lifecycle.'] }]
+  },
+  activity: {
+    title: 'Activity diagram', category: '03 / FLOW',
+    intro: 'Trace the sequence of operations from setup to the final simulation result.',
+    next: 'class', nextLabel: 'UML class diagram',
+    sheets: [{ title: 'Simulation execution flow', file: 'activityDiagrams/simulation-flow.svg', sample: true, description: 'Illustrative draft, not a verified execution specification. The example shows initialization, a completion check, agent turns, and rendering. These steps are inspired by names in the UML; replace this SVG with your final activity diagram before submission.', points: ['Read the flow from the initial node downward.', 'The decision branches between continuing and finishing.', 'The loop represents repeated simulation steps.'] }]
+  }
+};
